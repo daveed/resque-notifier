@@ -2,6 +2,10 @@
 
 Resque Notifier is a Resque plugin that sends notifications when a job fails.
 
+## Requirements
+
+Ruby 2.3.1
+
 ## Installation
 
 Add this line to your application's Gemfile:
