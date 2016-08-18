@@ -1,5 +1,7 @@
 # Resque::Notifier
 
+[![Code Climate](https://codeclimate.com/github/daveed/resque-notifier/badges/gpa.svg)](https://codeclimate.com/github/daveed/resque-notifier)
+
 Resque Notifier is a Resque plugin that sends notifications when a job fails.
 
 ## Requirements
