@@ -26,7 +26,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### This gem activates a notifier when environment variables are set.
+
+    example: Slack
+    RESQUE_HOOK=https://hooks.slack.com/services/<generated_hash>
+    RESQUE_CHANNEL="#channel-name"
+
+### Add the Notifier backend to your existing Resque configuration (config/initializers/resque.rb)
+
+```ruby
+require 'resque/failure/notifier'
+Resque::Failure::Multiple.classes = [Resque::Failure::Redis, Resque::Failure::Notifier]
+Resque::Failure.backend = Resque::Failure::Multiple
+```
+    
+
 
 ## Contributing
 
