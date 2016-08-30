@@ -10,12 +10,17 @@ module Resque
         uri     = URI(ENV['RESQUE_HOOK'])
         payload = { channel:    ENV['RESQUE_CHANNEL'],
                    username:   "resque",
-                   text:       "text",
+                   text:       text,
                    icon_emoji: ":ghost:"}.to_json
         Net::HTTP.post_form(uri, payload: payload)
       end
 
+      def text
+        exception.to_s
+      end
+
     end
+
 
   end
 end
