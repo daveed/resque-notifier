@@ -8,7 +8,7 @@ Resque Notifier is a Resque plugin that sends notifications when a job fails.
 
 ## Requirements
 
-Ruby 2.3.1
+Ruby 2.2.0
 
 ## Installation
 
@@ -47,7 +47,16 @@ require 'resque/failure/notifier'
 Resque::Failure::Multiple.classes = [Resque::Failure::Redis, Resque::Failure::Notifier]
 Resque::Failure.backend = Resque::Failure::Multiple
 ```
-    
+
+
+## Example
+
+If you are using Slack, you can define a channel to receive failed job messages. Multiple errors are ignored until they are cleared from Resque. Resque-Notifier will only send the first failed job of the same Class and Exception names. For example:
+
+    Worker: mac000dwright.local:28852:*
+    Class: http://my.domain.com/resque/failed/?class=User
+    Exception: NoMethodError
+    Error: undefined method `some_method' for nil:NilClass
 
 
 ## Contributing
