@@ -11,7 +11,7 @@ module EnvResque
   end
 
   def env_resque_host
-    ENV['RESQUE_HOST']
+    ENV["RESQUE_HOST"]
   end
 
   def haz_env_resque_host?
