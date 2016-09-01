@@ -33,6 +33,12 @@ Or install it yourself as:
     RESQUE_HOOK=https://hooks.slack.com/services/<generated_hash>
     RESQUE_CHANNEL="#channel-name"
 
+### Optional environment variable for linking to resque-web
+
+    example: if you access your failed jobs through resque-web on http://my.domain.com/resque/overview
+    RESQUE_HOST=http://my.domain.com
+
+
 ### Add the Notifier backend to your existing Resque configuration (config/initializers/resque.rb)
 
 ```ruby
