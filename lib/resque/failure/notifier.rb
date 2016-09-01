@@ -1,17 +1,20 @@
 require "uri"
 require "resque"
 require "net/http"
-# require "core_ext/string"
+require "env_resque"
 
 module Resque
   module Failure
     class Notifier < Base
 
+      include EnvResque
+
       def save
+        return unless haz_required_envs?
         unless exception_logged_already?
-          uri     = URI(ENV["RESQUE_HOOK"])
+          uri     = URI(env_resque_hook)
           payload = {
-            channel:    ENV["RESQUE_CHANNEL"],
+            channel:    env_resque_channel,
             username:   "resque",
             text:       text,
             icon_emoji: ":ghost:"
@@ -39,12 +42,12 @@ module Resque
         "Worker: #{worker.to_s}      \n" \
         "Class: #{link_to_class}      \n" \
         "Exception: #{error_exception} \n" \
-        "Error: #{exception.to_s}        \n"
+        "Error: #{exception.to_s}       \n"
       end
 
       def link_to_class
-        if !ENV['RESQUE_HOST'].empty?
-          "#{ENV['RESQUE_HOST']}/resque/failed/?class=#{error_class}"
+        if haz_env_resque_host?
+          "#{env_resque_host}/resque/failed/?class=#{error_class}"
         else
           error_class
         end
