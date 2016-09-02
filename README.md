@@ -1,5 +1,7 @@
 # Resque::Notifier
 
+[![Join the chat at https://gitter.im/resque-notifier/Lobby](https://badges.gitter.im/resque-notifier/Lobby.svg)](https://gitter.im/resque-notifier/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gem Version](https://badge.fury.io/rb/resque-notifier.svg)](https://badge.fury.io/rb/resque-notifier)
 [![Build Status](https://circleci.com/gh/daveed/resque-notifier.svg?style=shield&circle-token=6c0248354723eb52f17d7fcee18969620278f6a6)](https://circleci.com/gh/daveed/resque-notifier/tree/master)
 [![Code Climate](https://codeclimate.com/github/daveed/resque-notifier/badges/gpa.svg)](https://codeclimate.com/github/daveed/resque-notifier) [![Test Coverage](https://codeclimate.com/github/daveed/resque-notifier/badges/coverage.svg)](https://codeclimate.com/github/daveed/resque-notifier/coverage)
